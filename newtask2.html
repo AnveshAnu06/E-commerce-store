@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple E-commerce Store</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Background */
+        body {
+            background-color: #FFF9C4; /* Light yellow */
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #FFCA28; /* Amber */
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        /* Search Box */
+        .search-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-container input {
+            padding: 10px;
+            width: 50%;
+            font-size: 1rem;
+            border: 2px solid #FFCA28;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            background-color: #FFCA28;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #FFB300;
+        }
+
+        /* Product Section */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #777;
+            font-size: 1rem;
+        }
+
+        .product-card button {
+            padding: 10px;
+            background-color: #FFCA28;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #FFB300;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #FFCA28;
+            color: #fff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to My E-commerce Store</h1>
+    </header>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search for products..." />
+        <button onclick="searchProduct()">Search</button>
+    </div>
+
+    <!-- Product Container -->
+    <div class="product-container" id="productContainer">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="C:\Users\vinay\Downloads\html shopping img\earphones.jpg"/250x200" alt="Product 1">
+            <h3>Wireless Headphones</h3>
+            <p>$59.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="C:\Users\vinay\Downloads\html shopping img\smartwatch.jpeg"/250x200" alt="Product 2">
+            <h3>Smartwatch</h3>
+            <p>$99.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="C:\Users\vinay\Downloads\html shopping img\ortable speaker.jpg"/250x200" alt="Product 3">
+            <h3>Portable Speaker</h3>
+            <p>$29.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="C:\Users\vinay\Downloads\html shopping img\smartphone.jpg"/250x200" alt="Product 4">
+            <h3>Smartphone</h3>
+            <p>$499.99</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+	     <img src="C:\Users\vinay\Downloads\html shopping img\games.jpeg"/250*250" alt="product 5">
+            <h3>Gaming Console</h3>
+	   
+            <p>$299.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My E-commerce Store | All Rights Reserved</p>
+    </footer>
+
+    <!-- Search Functionality -->
+    <script>
+        function searchProduct() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                const productName = product.querySelector('h3').textContent.toLowerCase();
+                if (productName.includes(input)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
